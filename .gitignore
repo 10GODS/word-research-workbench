@@ -1,0 +1,61 @@
+# Secrets and environment
+.env
+.env.*
+*.key
+*.pem
+*.pfx
+*.p12
+*.crt
+*.cer
+secrets/
+credentials/
+
+# Model / inference assets
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.onnx
+*.gguf
+models/
+checkpoints/
+openvino_model/
+
+# Local data and research content
+*.doc
+*.docx
+*.pdf
+*.ris
+*.bib
+*.sqlite
+*.sqlite3
+*.db
+data/
+logs/
+cache/
+output/
+exports/
+backups/
+user-content/
+manuscripts/
+
+# Office / Windows temporary files
+~$*
+*.tmp
+*.temp
+*.log
+Thumbs.db
+Desktop.ini
+
+# Node / Python
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
