@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Research Workbench — Private Beta POC</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="shell">
+    <aside class="pane">
+      <div class="badge">PRIVATE BETA POC</div>
+      <h1>Research Workbench</h1>
+      <p class="muted">Word-centered research workflow demo</p>
+
+      <button data-panel="web1">Web Workspace 1</button>
+      <button data-panel="web2">Web Workspace 2</button>
+      <button data-panel="scholar">Scholar Workspace</button>
+      <button data-panel="notes">Notepad</button>
+      <button data-panel="local">Local Processing</button>
+
+      <p class="foot">Static proof of concept. No manuscript text is uploaded.</p>
+    </aside>
+
+    <section class="content">
+      <div id="web1" class="panel active">
+        <h2>Web Workspace 1</h2>
+        <div class="browserbar">https://example-research-workspace.local</div>
+        <div class="mockbrowser">
+          <h3>Embedded writing / research surface</h3>
+          <p>This represents an in-Word Office dialog or WebView-based workspace.</p>
+          <textarea placeholder="Selected Word text would be staged here in the production beta."></textarea>
+          <div class="row"><button disabled>Open workspace</button><button disabled>Paste approved result</button></div>
+        </div>
+      </div>
+
+      <div id="web2" class="panel">
+        <h2>Web Workspace 2</h2>
+        <div class="browserbar">https://example-ai-workspace.local</div>
+        <div class="mockbrowser">
+          <h3>Second AI / research surface</h3>
+          <p>A separate browser workspace lets the user keep different tasks isolated.</p>
+          <div class="cards"><div>Copy selection</div><div>Review externally</div><div>Paste result</div></div>
+        </div>
+      </div>
+
+      <div id="scholar" class="panel">
+        <h2>Scholar Workspace</h2>
+        <div class="browserbar">https://scholar.google.com/</div>
+        <div class="mockbrowser">
+          <input id="query" placeholder="Paper title, DOI, author, keywords" />
+          <button id="searchBtn">Mock Scholar search</button>
+          <div id="result" class="result hidden">
+            <strong>Example scholarly result</strong>
+            <p>Author A., Author B. (2026). Example research article.</p>
+          </div>
+          <label>In-text citation</label>
+          <input id="citation" placeholder="(Author et al., 2026)" />
+          <label>Full reference</label>
+          <textarea id="reference" placeholder="Paste verified reference manually"></textarea>
+        </div>
+      </div>
+
+      <div id="notes" class="panel">
+        <h2>Notepad</h2>
+        <textarea id="note" class="big" placeholder="Quick working note"></textarea>
+        <button id="saveNote">Save</button>
+        <span id="saved" class="saved"></span>
+      </div>
+
+      <div id="local" class="panel">
+        <h2>Local Processing</h2>
+        <div class="status good">CPU-first offline hook</div>
+        <p>This panel demonstrates the privacy boundary only. Model weights, prompts, and production inference code are intentionally not included in this repository.</p>
+        <ul>
+          <li>Local text stays on the user's machine.</li>
+          <li>Optional Intel acceleration can be evaluated separately.</li>
+          <li>Scientific values and citations can be protected before processing.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
