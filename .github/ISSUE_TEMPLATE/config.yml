@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Collaboration guide
+    url: https://github.com/10GODS/word-research-workbench-private-beta/blob/main/COLLABORATION.md
+    about: Read the contribution and collaboration boundary before proposing larger work.
+  - name: Sponsorship and research partnership
+    url: https://github.com/10GODS/word-research-workbench-private-beta/issues/2
+    about: Start a public, non-sensitive sponsorship or partnership discussion.
+  - name: Security and privacy policy
+    url: https://github.com/10GODS/word-research-workbench-private-beta/blob/main/SECURITY.md
+    about: Read this before reporting security or privacy concerns.
