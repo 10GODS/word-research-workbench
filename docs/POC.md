@@ -2,32 +2,22 @@
 
 ## Objective
 
-Show that a Microsoft Word research workspace can combine local-first language assistance, scholarly verification, manuscript review, research-integrity support, and connections to scientific analysis workflows without exposing private production implementation.
+Show how a Microsoft Word research workspace might combine local-first language assistance, scholarly verification, manuscript review, research-integrity support and links to scientific analysis workflows without exposing private production implementation.
 
-The public proof of concept is designed to make the product direction understandable to researchers, research-software developers, academic institutions, and potential collaborators.
+The public proof of concept is intended to make the product direction understandable to researchers, research-software developers, academic institutions and potential collaborators.
 
 ## Public demo scenario
 
-1. Open the mock Word-style task pane.
-2. Explore the research-workbench concept inside Microsoft Word.
-3. Review the local-processing / privacy-first direction.
-4. Open the scholarly workflow to see manual citation/reference handling.
-5. Review the integrity/evidence direction.
-6. Read the Research Lab documentation to understand the Python/Jupyter, GIS, and Google Earth Engine roadmap.
+1. Open the mock Word-style task pane at demo/index.html.
+2. Explore its writing/workbench panels using mock content.
+3. Review the local-processing/privacy-first direction described in the interface.
+4. Explore the scholarly lookup panel for the manual citation/reference concept.
+5. For the integrity/evidence concept, read the dedicated [Research Lab v4.3 overview](RESEARCH_LAB_V4_3.md) and [Research Copilot v4.4 notes](RESEARCH_COPILOT_V4_4.md). The static demo does not contain an integrity/evidence panel or a control for this step.
+6. Read the [science-first workflow](SCIENCE_FIRST_WORKFLOW.md) and [public roadmap](../ROADMAP.md) for research analysis and submission direction.
 
-## v4.3 Research Lab direction represented publicly
+## v4.4 Research Copilot direction represented publicly
 
-The current private product direction adds several capabilities that are described publicly but whose production implementation is not published here:
-
-- one-click manuscript review,
-- unified manual correction queue,
-- local AI writing assistance,
-- Python and Jupyter research workflows,
-- Google Earth Engine Python generation,
-- GIS and remote-sensing workflow support,
-- evidence-linked Methods and Results,
-- reproducibility/provenance records,
-- and science-first workflow design for researchers who do not program.
+A separate private application package adds a plan-first workflow and local research helpers: proposed study design, dataset and statistics advice, local project memory, evidence records, explicit analysis approval, and constrained Methods/Results checks. The private package source and production implementation are not included in this repository. See [v4.4 notes](RESEARCH_COPILOT_V4_4.md) for what is implemented and what remains incomplete.
 
 ## POC limitations
 
@@ -35,24 +25,16 @@ The current private product direction adds several capabilities that are describ
 - It does not include production model weights or private prompts.
 - It does not expose unpublished integrity/evidence heuristics.
 - It does not scrape Google Scholar.
-- It does not auto-submit manuscript text to third-party websites.
+- It does not submit manuscript text to third-party websites.
 - It does not contain production credentials.
-- It does not publish the production Author Focus v4.3 application source.
-- It does not claim that automated review can establish scientific validity or authorship.
+- It does not publish the production Author Focus application source or installers.
+- It does not claim that automated review can establish scientific validity, source authenticity or authorship.
+- Public product descriptions communicate direction; they are not a download or feature guarantee for the mock demo.
 
 ## Success criteria
 
-The public POC is successful if a reviewer can understand in a few minutes:
-
-- the problem the project addresses,
-- why Word is used as the researcher-facing workspace,
-- how local-first processing protects privacy,
-- how citations/evidence remain researcher-controlled,
-- how analysis can connect to manuscript evidence,
-- and how the project is evolving from a writing add-in into a science-first research workbench.
+The public POC is useful if a reviewer can understand the problem, why Word is used as the researcher-facing workspace, how local-first processing supports privacy, how citations and evidence remain researcher-controlled, how analysis may connect to manuscript evidence, and how the product is evolving into a science-first research workbench.
 
 ## Public/private distinction
 
-The repository documents the concept, workflows, screenshots, roadmap, research direction, and collaboration surface.
-
-The private production build may be more advanced than the public POC. Describing a capability here does not imply that its implementation is open-source or available in this repository.
+The repository documents the concept, mock demo, workflows, screenshots, roadmap, research direction and collaboration surface. Production implementation may be more advanced than the public POC. Describing a capability here does not imply its implementation is open source or available in this repository.
