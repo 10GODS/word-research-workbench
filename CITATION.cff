@@ -1,25 +1,28 @@
 cff-version: 1.2.0
-title: "Word Research Workbench"
-message: "If you reference this public beta proof of concept in academic or research-software work, please cite this repository."
+title: "Author Focus / Word Research Workbench"
+message: "If you reference this public beta proof of concept in academic, research-software, or scholarly-communication work, please cite this repository."
 type: software
 authors:
   - name: "10GODS"
-version: "0.1.0-beta"
-date-released: "2026-09-12"
-repository-code: "https://github.com/10GODS/word-research-workbench-private-beta"
-url: "https://github.com/10GODS/word-research-workbench-private-beta"
-abstract: "A public beta proof of concept for a Microsoft Word research workbench combining local-first language processing, scholarly lookup, citation workflow, research-integrity utilities, and optional web workspaces."
+version: "0.2.0-beta"
+date-released: "2026-09-27"
+repository-code: "https://github.com/10GODS/word-research-workbench"
+url: "https://github.com/10GODS/word-research-workbench"
+abstract: "A public proof of concept for a science-first Microsoft Word research assistant combining local-first language processing, academic writing support, citation verification, research-integrity workflows, Python/Jupyter research analysis, and geospatial/Google Earth Engine workflow concepts."
 keywords:
-  - Microsoft Word add-in
+  - Microsoft Word research assistant
   - Office.js
   - academic writing
   - research software
   - local AI
   - offline AI
-  - citation management
-  - Google Scholar
-  - Crossref
+  - citation verification
   - research integrity
-  - Intel OpenVINO
-  - scholarly writing
+  - Jupyter
+  - Python
+  - Google Earth Engine
+  - GIS
+  - remote sensing
+  - reproducible research
+  - scholarly communication
 license: "NOASSERTION"
