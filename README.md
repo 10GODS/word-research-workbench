@@ -113,7 +113,18 @@ External AI-text detector results, if shown in project material, are **illustrat
 
 Open [demo/index.html](demo/index.html) to view the self-contained mock POC. It uses mock content and does **not** upload manuscript text or expose the private production implementation.
 
-See:
+### Proof, evaluation and case studies
+
+The project is being documented around reproducible scientific workflows rather than generic AI claims:
+
+- [90-second demo storyboard](docs/DEMO_90_SECONDS.md) — manuscript issue → evidence → notebook → correction
+- [Benchmark framework](docs/BENCHMARKS.md) — scientific-meaning preservation, citation identity, numerical consistency, notebook traceability, GEE validation, performance and privacy
+- [Case Study 1: Sentinel-2 NDVI](docs/CASE_STUDY_1_NDVI.md) — satellite data → analysis → manuscript evidence
+- [Case Study 2: Urban heat](docs/CASE_STUDY_2_URBAN_HEAT.md) — correlation/causation and statistical-language safeguards
+- [Case Study 3: Citation audit](docs/CASE_STUDY_3_CITATION_AUDIT.md) — citation identity, metadata and evidence triage
+- [Public v4.3 release plan](docs/PUBLIC_RELEASE_V4_3_PLAN.md) — GitHub release, Zenodo, AppSource and institutional-pilot readiness
+
+Additional project documentation:
 
 - [docs/POC.md](docs/POC.md) — public proof-of-concept scope
 - [docs/RESEARCH_LAB_V4_3.md](docs/RESEARCH_LAB_V4_3.md) — v4.3 Research Lab direction
