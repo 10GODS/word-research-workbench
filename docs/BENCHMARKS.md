@@ -1,211 +1,77 @@
 # Benchmark and Evaluation Framework
 
-## Why benchmark Author Focus?
+Author Focus should be evaluated on research-workflow reliability, not vague claims such as “more human writing” or a single AI-detector score. This framework covers both the public POC and private application builds. Numerical benchmark results should be published only after a test set and scoring procedure are frozen.
 
-The project should be evaluated on **research workflow reliability**, not on vague claims such as “more human writing” or a single AI-detector score.
+## v4.4 package regression status
 
-The strongest benchmarks test whether Author Focus preserves scientific content, identifies real inconsistencies, retrieves correct scholarly metadata, and connects manuscript statements to evidence.
+The private v4.4 package regression suite passed in the available non-Windows runtime. It checks research-plan completeness, catalog mappings, explicit approval state, statistical non-causal wording, project-memory isolation, missing-evidence labels, refusal to generate Methods from unexecuted records, exact numeric-token matching and retained v4.2/v4.3 routes/UI safeguards.
+
+This is a package self-test, not an independent scientific benchmark. It does not establish expert agreement, live dataset currency, statistical validity, Word/Microsoft 365 compatibility or manuscript truth. Windows desktop, authenticated Earth Engine and live-provider checks remain environment-specific.
 
 ## Benchmark groups
 
-### 1. Scientific meaning preservation
+### 1. Research-plan completeness and usability
 
-Purpose: measure whether language editing changes factual meaning.
+Use a fixed question set covering trend, comparison, association, mapping, exposure, drought, land-cover and multi-dataset designs. Score whether the plan includes objective, questions/hypotheses, variables, datasets, resolution, preprocessing, method, statistics, validation, outputs, evidence, limitations and manuscript sections. Reviewers should mark assumptions the system added without support and missing items it correctly surfaced.
 
-Test set should include sentences containing:
+Run moderated tasks with non-programming scientists. Record completion, time, correction count, comprehension and whether participants can tell a proposal from an approved decision.
 
-- increases/decreases,
-- higher/lower relationships,
-- significant/non-significant results,
-- may/might/could uncertainty,
-- correlation versus causation,
-- sample sizes,
-- percentages,
-- p-values,
-- units,
-- acronyms,
-- figure/table references,
-- and citations.
+### 2. Dataset metadata and coverage
 
-Metrics:
+For every catalog entry, compare ID, band, native resolution, scale/offset, units, date period and QA notes with current authoritative product/provider metadata. Keep this separate from query-specific Earth Engine availability and authenticated execution.
 
-- protected-number preservation rate,
-- citation preservation rate,
-- uncertainty-language preservation rate,
-- direction-of-effect preservation rate,
-- correlation/causation preservation rate,
-- human expert accept/reject rate.
+### 3. Statistical advice
 
-Target reporting format:
+Have blinded statisticians judge method fit against design, unit of analysis, sampling, dependence, assumptions, effect size, uncertainty, multiple testing and causal wording. Report expert agreement and disagreement categories. The current advisor suggests a candidate method; it does not inspect data or calculate tests.
 
-| Metric | Cases | Passed | Rate |
-|---|---:|---:|---:|
-| Numbers preserved | TBD | TBD | TBD |
-| Citations preserved | TBD | TBD | TBD |
-| Effect direction preserved | TBD | TBD | TBD |
-| Uncertainty preserved | TBD | TBD | TBD |
-| Correlation not converted to causation | TBD | TBD | TBD |
+### 4. Scientific meaning preservation
 
-Do not publish percentages until a reproducible test set has actually been run.
+Use sentences containing effect directions, significance, uncertainty, causal language, sample sizes, percentages, p-values, units, acronyms, figure/table references and citations. Measure protected-number preservation, citation identity, uncertainty preservation, direction preservation and human accept/reject rate.
 
-### 2. Citation identity verification
+Do not publish rates before a reproducible test corpus is actually run.
 
-Purpose: test whether bibliography entries are matched to the correct scholarly records.
+### 5. Citation identity and claim evidence
 
-Test set:
+Test clean/ambiguous DOI references, incomplete records, title/year mismatch, duplicate authors, retraction/correction cases and claims with full-text, abstract-only or title-only evidence. Report correct identity, false matches, unresolved rates and human source-review agreement. A correct bibliographic match does not prove the cited source supports the claim.
 
-- clean DOI references,
-- incomplete references,
-- title spelling errors,
-- year mismatches,
-- duplicate author names,
-- retracted/corrected publications,
-- citations without DOI,
-- ambiguous titles.
+### 6. Numerical consistency and Results evidence
 
-Metrics:
+Test values across manuscript text, CSV, XLSX, notebook output and tables; include percentages, sample counts, dates, p-values, units, rounding, negative values and near matches such as 0.46 versus 0.460. Report false alerts, missed conflicts, exact match rate and unit/context errors. A lexical value match is not scientific validation.
 
-- correct identity match,
-- false match rate,
-- unresolved rate,
-- DOI recovery rate,
-- correction/retraction flag recall where ground truth is known.
+### 7. Methods and notebook traceability
 
-Important distinction:
+Test whether extracted datasets, bands, dates, masks, scale, formulas, algorithms, statistics, parameters and exports match executed notebook/code records. Include planned-but-unexecuted code, stale outputs, duplicated values and missing provenance. Report field-level precision and missing-detail behavior. Do not treat generated code as executed work.
 
-A correct bibliographic match does **not** prove that the source supports the manuscript claim.
+### 8. Evidence graph
 
-### 3. Claim–evidence support triage
+Test source → code/notebook → calculation → figure/table → manuscript claim chains, missing links, mismatched values and conflicts. Report link accuracy and review-state accuracy. Do not collapse evidence states into an overall truth score.
 
-Purpose: test whether the system appropriately distinguishes:
+### 9. Python/Jupyter and Earth Engine
 
-- clearly supported,
-- partially supported,
-- unsupported,
-- and insufficient-evidence cases.
+Measure notebook load/structure preservation, formatting, explicit execution behavior, traceback capture, output extraction and repair-suggestion correctness separately. Validate Earth Engine collection IDs, bands, scale factors, masks, date coverage, syntax and exports using curated fixtures and authenticated spot checks. A generated export task is not proof of an executed export.
 
-Use title/abstract/full-text availability as separate evaluation conditions.
+### 10. Privacy, performance and platform
 
-Report confusion matrices and human reviewer agreement rather than one opaque score.
+Record startup, review, model latency, memory, CPU and notebook execution separately for local and remote modes. Observe outbound requests and document what text/metadata leaves the device. Test Windows Word desktop, add-in catalog registration, Microsoft 365 policy behavior, update/migration, accessibility and PowerShell installers on supported systems.
 
-### 4. Numerical manuscript consistency
+## Reporting template
 
-Purpose: detect mismatches between manuscript values and structured evidence.
-
-Test examples:
-
-- manuscript versus CSV,
-- manuscript versus XLSX,
-- manuscript versus notebook output,
-- manuscript versus table,
-- percentages,
-- sample sizes,
-- dates/study periods,
-- p-values,
-- accuracy metrics.
-
-Metrics:
-
-- true inconsistency detection rate,
-- false alert rate,
-- exact-value match rate,
-- rounding-tolerance behavior.
-
-### 5. Notebook-to-manuscript traceability
-
-Purpose: evaluate whether the correct notebook output can be linked to the relevant manuscript claim.
-
-Test:
-
-- one-to-one value links,
-- figures produced by notebook cells,
-- tables produced by code,
-- derived statistics,
-- stale outputs,
-- duplicated values from different analyses.
-
-Metrics:
-
-- correct source-link rate,
-- ambiguous-link rate,
-- missing-provenance rate.
-
-### 6. Python/Jupyter reliability
-
-Measure:
-
-- notebook load success,
-- code formatting success,
-- execution success on reproducible examples,
-- traceback capture,
-- repair suggestion validity,
-- output extraction,
-- preservation of notebook structure.
-
-A repair suggestion should be evaluated separately from automatic execution. The system should not silently rerun repaired scientific code.
-
-### 7. Google Earth Engine workflow validation
-
-Evaluate generated workflows for:
-
-- valid Earth Engine collection/image IDs,
-- correct bands,
-- scale factors,
-- date coverage,
-- cloud/quality masks,
-- expected spatial resolution,
-- valid Python syntax,
-- export configuration.
-
-Each dataset template should have a small regression test.
-
-### 8. Performance
-
-Record separately for local and remote modes:
-
-- startup time,
-- document scan time,
-- local model latency,
-- peak RAM,
-- CPU utilization,
-- notebook execution overhead,
-- citation lookup latency.
-
-Hardware specifications must be reported with results.
-
-### 9. Privacy behavior
-
-Test that local-only mode does not call configured remote AI endpoints.
-
-Report:
-
-- outbound requests observed,
-- which scholarly services are intentionally used,
-- what text/metadata is transmitted,
-- whether full manuscript text leaves the computer.
-
-## Recommended public benchmark suite
-
-A first credible public benchmark could contain:
-
-- 100 protected scientific sentences,
-- 50 bibliography/citation identity cases,
-- 50 manuscript-data consistency cases,
-- 20 notebook-to-manuscript traceability cases,
-- 10 reproducible Jupyter notebooks,
-- 10 Earth Engine templates.
-
-Every item should use synthetic, public, or openly licensed data.
+| Metric | Test set/version | Cases | Passed | Failed | Notes |
+|---|---|---:|---:|---:|---|
+| Research-plan required fields | TBD | TBD | TBD | TBD | Include missing/assumed details |
+| Dataset metadata match | TBD | TBD | TBD | TBD | Provider/metadata date required |
+| Statistician method agreement | TBD | TBD | TBD | TBD | Report disagreement categories |
+| Protected scientific meaning | TBD | TBD | TBD | TBD | Separate numbers/citations/uncertainty |
+| Methods provenance fields | TBD | TBD | TBD | TBD | Executed records only |
+| Results unsupported-value rejection | TBD | TBD | TBD | TBD | Include near-match values and units |
+| Evidence-link correctness | TBD | TBD | TBD | TBD | No truth-score aggregation |
+| Windows Word integration | TBD | TBD | TBD | TBD | Record Office build/policies |
 
 ## Reporting principles
 
-- Publish the exact test-set version.
-- Report failures, not only successes.
-- Separate deterministic checks from LLM-based judgments.
+- Publish the exact test corpus and procedure.
+- Report failures and limitations, not only successes.
+- Separate deterministic checks from AI judgments and human review.
 - Separate local and remote model results.
-- Never treat AI-detector performance as proof of human authorship.
-- Do not use benchmark results to imply scientific validity beyond the tested behavior.
-
-## Status
-
-This document defines the evaluation framework. Numerical benchmark results should be added only after the public test corpus and execution procedure are frozen and independently reproducible.
+- Never treat AI-detector output as proof of human authorship.
+- Do not generalize benchmark performance into scientific validity beyond tested behavior.

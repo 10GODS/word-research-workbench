@@ -1,112 +1,61 @@
 # Roadmap
 
-The public roadmap tracks the product direction without exposing private production implementation.
+This public roadmap describes product direction while preserving the public/private implementation boundary. The private v4.4 package adds a first Research Copilot workflow; this does not mean every roadmap item is complete.
 
-## Public POC — completed direction
+## Public POC — available here
 
-- Demonstrate a Word-native research-workbench concept
-- Show local-first processing, scholarly lookup, citation workflow, notes, and research-integrity directions
-- Publish screenshots, public documentation, collaboration routes, and an explicit public/private boundary
-- Keep researcher approval central to citation and manuscript changes
+- Word-style mock task-pane demo using mock content
+- Science-first workflow and public/private boundary documentation
+- Case studies, contribution routes and benchmark framework
+- Researcher approval and scientific-integrity principles
 
-## Author Focus v4.x — current product direction
+## Author Focus v4.4 — Research Copilot
 
-### Unified manuscript review
+### Implemented in the private package; regression checks passed in the available non-Windows runtime
 
-- Consolidate grammar, academic style, citations, references, evidence, statistics, figures/tables, and integrity checks into one review workflow
-- Present findings in a single manual correction queue
-- Keep scientific and factual changes reviewable
-- Improve rollback, traceability, and issue explanations
+- Plain-language research-plan draft with objective, questions/hypotheses, variables, datasets, scale, preprocessing, analysis, statistics, validation, maps/figures/tables, evidence needs, limitations and manuscript sections
+- Curated dataset advice from the retained Research Lab catalog
+- Conditional statistics advice with assumptions, interpretation, limitations and non-causal language
+- Explicit plan approval before continuing to the analysis workspace
+- Project-isolated local JSON memory
+- Evidence graph records with VERIFIED, REVIEW, CONFLICT and NO EVIDENCE review states; no aggregate truth score
+- Search over user-supplied project text/records
+- Methods extraction only from records marked executed and exact numeric-token checks for requested Results values
+- Journal submission checklist prompts
+- Progressive disclosure that places technical controls under Advanced tools
 
-### Science-first interface
+The package-level tests do not establish statistical expert agreement, live dataset availability, Windows Word compatibility, or scientific correctness.
 
-- Replace developer-oriented controls with research goals and scientific tasks
-- Let users describe objectives in natural language
-- Hide package/API/model complexity unless the user opens advanced controls
-- Add guided explanations for non-programming researchers
+### Still needed
 
-### Local AI and author voice
+- Index and search DOCX, PDF, CSV, XLSX, Python, IPYNB, figures, maps, GeoTIFF, shapefiles and geopackages with file/section/cell provenance
+- Click a manuscript statement to inspect its complete evidence chain
+- Derive Methods automatically from verified execution metadata and map outputs to manuscript claims
+- Journal-specific live instruction retrieval and rule validation
+- Publication figure/map layout, caption, numbering, CRS, DPI, scale/north arrow checks and Word cross-reference insertion
+- Reviewer Mode integrated with manuscript context and traceable findings
+- Researcher usability testing with non-programming scientists
 
-- Continue local-first writing support
-- Improve author-voice profiling without copying source phrases
-- Preserve scientific meaning, citations, numbers, uncertainty language, and terminology
-- Treat style indicators as editing cues rather than proof of AI authorship
-
-## Research Lab — active direction
+## Retained v4.3 Research Lab direction
 
 ### Python and Jupyter
 
-- Project-aware Python generation
-- Jupyter notebook creation, reading, editing, and execution
-- Automatic formatting/linting
-- Error-aware repair suggestions
-- Reproducibility snapshots and output tracking
-- Evidence links from notebook output to manuscript statements
+Project-aware Python generation, notebook creation/editing/execution, formatting/linting, error-aware repair suggestions, output inspection and reproducibility snapshots. Code execution remains an explicit user action.
 
-### Google Earth Engine
+### Google Earth Engine and geospatial analysis
 
-- Natural-language Earth Engine Python generation
-- Dataset-aware workflow templates
-- Sentinel-2, Landsat, MODIS, CHIRPS, TerraClimate, ERA5-Land, SRTM, GHSL, WorldCover, Sentinel-5P, VIIRS, SMAP and related workflows
-- Google Drive/export workflow support
-- Validation of dataset IDs, bands, dates, scales, and output assumptions
+Dataset-aware templates for optical, thermal, rainfall, climate, terrain, population, land cover, pollution, water, soil moisture and night-light workflows. Dataset IDs, bands, scale factors, dates and spatial scale must be validated for each proposed study.
 
-### GIS and remote sensing
+### Manuscript, citation and integrity workflows
 
-- Raster/vector inspection
-- Map-quality checks
-- CRS/resolution/unit validation
-- Publication figure generation
-- Reusable geospatial analysis templates
-- Integration between maps, statistics, notebooks, and manuscript evidence
+Unified manuscript review, manual correction queue, citation/reference verification, local-first writing, author-voice controls and research-integrity screening. Scientific edits remain reviewable.
 
-## Evidence and reproducibility
+## Validation and release maturity
 
-- Claim–evidence graph
-- Raw data → code → output → figure/table → manuscript traceability
-- Numerical consistency checks
-- Methods-from-executed-analysis workflow
-- Results-from-verified-output workflow
-- Research-file fingerprints and provenance records
+Before a stable public release, the project needs broader Windows/Microsoft 365 testing, Office add-in catalog testing, accessibility review, privacy/security review, independent statistical review, reproducible benchmark reporting, controlled failure-case reporting, packaging/signing/update validation, licensing decisions and an explicit decision about which production components may become public.
 
-## Scholarly workflow
+## Longer-term workflow
 
-- Citation/reference identity verification
-- DOI metadata checks
-- Correction/retraction awareness
-- Open-access source discovery
-- Manual source confirmation for ambiguous evidence
-- Journal-specific formatting and submission checks
+**Research → Manuscript → Analysis → Evidence → Review → Submission**
 
-## Researcher assistance
-
-- Research design wizard
-- Dataset advisor
-- Statistics advisor
-- Figure and map studio
-- Supervisor/reviewer mode
-- Reviewer-response workflow
-- Guided learning mode for scientists who do not program
-
-## Public beta maturity
-
-Before a stable public release, the project needs:
-
-- broader Windows and Microsoft 365 testing,
-- accessibility review,
-- privacy/security review,
-- reproducible benchmark documentation,
-- controlled failure-case reporting,
-- packaging/signing/update strategy,
-- licensing and support model,
-- and an explicit decision about which production components become public.
-
-## Longer-term vision
-
-The long-term target is a researcher-controlled workflow where a scientist can move from:
-
-**research question → data → analysis → evidence → figures/tables → manuscript → review → submission**
-
-without needing to manually coordinate many disconnected tools.
-
-The software should expose more scientific capability while making less technical complexity visible.
+The aim is to make rigorous, reproducible and traceable work easier without hiding scientific uncertainty or removing researcher control.
